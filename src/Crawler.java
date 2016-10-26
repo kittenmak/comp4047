@@ -83,15 +83,25 @@ public class Crawler {
 					if (line.contains("<li>") || line.contains("</li>")) {
 						line = remove_li(line);
 					}
-
+					if (line.contains("<li")){
+						line = remove_bigli(line);
+					}
 					if (line.contains("ul") || line.contains("</ul>")) {
 						line = remove_basicul(line);
 					}
-
+					if(line.contains("<ul")){
+						line= remove_bigul(line);
+					}
+					if (line.contains("</a>")){
+						line = remove_basica(line);
+					}
+					if (line.contains("<a href")){
+						//System.out.println("hi");
+						//line = remove_biga(line);
+					}
 					if (line.contains("<div") || line.contains("</div>")) {
 						line = remove_basicdiv(line);
 					}
-
 //					if (line.contains("<!--") && line.contains("-->")) {
 //						line = remove_basiccomment(line);
 //					}
@@ -104,12 +114,7 @@ public class Crawler {
 					}
 					if(line.contains("<p")){
 						line = remove_bigp(line);
-					}
-					
-					if(line.contains("<ul")){
-						line= remove_bigul(line);
-					}
-					
+					}				
 					if(line.contains("<span>")||line.contains("</span>")){
 						line = remove_span(line);
 					}
@@ -126,8 +131,12 @@ public class Crawler {
 						line = remove_iframe(line);
 					}
 					
-					if(line.contains("<img>")){
+					if(line.contains("<img")){
 						line = remove_img(line);
+					}
+					
+					if(line.contains("<")&&line.contains(">")){
+						line = remove_htmltag(line);
 					}
 					
 					System.out.println(line);
@@ -156,6 +165,41 @@ public class Crawler {
 		return line;
 	}
 
+	private String remove_basica(String str) {
+		String line = str;
+		line = line.replaceAll("<a>", "");
+		line = line.replaceAll("</a>", "");
+		return line;
+	}
+	
+	private String remove_biga(String str){
+		String line = str;
+		while(line.contains("<a href")){
+		int a = line.indexOf("<a href=");
+		int b = line.indexOf(">", a);
+		
+		StringBuffer s1 = new StringBuffer(line);
+		line = s1.delete(a, b + 1).toString();
+		//System.out.print("done");
+		}
+		
+		return line;
+	}
+	
+	private String remove_htmltag(String str){
+		String line = str;
+		while(line.contains("<") && line.contains(">")){
+			int a = line.indexOf("<");
+			int b = line.indexOf(">");
+			
+			StringBuffer s1 = new StringBuffer(line);
+			line = s1.delete(a, b+1).toString();
+			
+		
+		}
+		return line;
+	}
+	
 	private String remove_basicdiv(String str) {
 		String line = str;
 		// int a = line.indexOf("<div");
@@ -164,6 +208,7 @@ public class Crawler {
 		line = line.replaceAll("<div>", "");
 		line = line.replaceAll("</div>", "");
 
+		
 		return line;
 	}
 
@@ -217,7 +262,27 @@ public class Crawler {
 		return line;
 
 	}
+	
+	private String remove_bigli(String str) {
+		String line = str;
 
+		int a = line.indexOf("<li");
+		int b = line.indexOf(">", a);
+		StringBuffer s1 = new StringBuffer(line);
+		line = s1.delete(a, b + 1).toString();
+		return line;
+
+	}
+
+	private String remove_img(String str) {
+		String line = str;
+		int a = line.indexOf("<img");
+		int b = line.indexOf(">", a);
+		StringBuffer s1 = new StringBuffer(line);
+		line = s1.delete(a, b + 1).toString();
+		return line;
+	}
+	
 	private String remove_span(String str) {
 		String line = str;
 		line = line.replaceAll("<span>", "");
@@ -247,16 +312,6 @@ public class Crawler {
 		String line = str;
 
 		int a = line.indexOf("<iframe");
-		int b = line.indexOf(">", a);
-		StringBuffer s1 = new StringBuffer(line);
-		line = s1.delete(a, b + 1).toString();
-		return line;
-	}
-	
-	private String remove_img(String str){
-		String line = str;
-		
-		int a = line.indexOf("<img");
 		int b = line.indexOf(">", a);
 		StringBuffer s1 = new StringBuffer(line);
 		line = s1.delete(a, b + 1).toString();
@@ -317,7 +372,9 @@ public class Crawler {
 	}
 
 	public static void main(String[] args) {
-		Crawler attempt = new Crawler("http://www.hkbu.edu.hk/eng/main/index.jsp", 10, 100);
+		String web = "http://www.hkbu.edu.hk/eng/main/index.jsp";
+		String s = "http://ge.hkbu.edu.hk/ge-programme";
+		Crawler attempt = new Crawler(web, 10, 100);
 	}
 
 }
