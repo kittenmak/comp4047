@@ -109,9 +109,10 @@ public class Crawler2 {
 		String scriptEndString = "(?i)</script>"; // "script" tag pattern end
 
 		ArrayList<Item> item = new ArrayList<Item>();
-		
-		// ArrayList<String> stopList = new ArrayList<String>();
-		// CreateStopList(stopList);
+		ArrayList<String> keyword = new ArrayList<String>();
+
+		 ArrayList<String> stopList = new ArrayList<String>();
+		 CreateStopList(stopList);
 		try {
 			// create URL connection
 			HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
@@ -213,27 +214,40 @@ public class Crawler2 {
 					{
 						if (i.length() >= 3) // check for at least alphabets
 						{
-							// if (stopList.contains(i.toLowerCase()) == false)
-							// // check if word in stop list
-							// {
-							for(int a=0; a<item.size(); a++){
-								Item object = item.get(a);
-								if(object.getKeyword().contains(i)){
-									item.remove(a);
-//									System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-									object.setCount(object.getCount()+1);
-									item.add(object);
-								}
-							}
+							 if (stopList.contains(i.toLowerCase()) == false)
+							 {
+								 if(keyword.contains(i) == false){
+									 Item obj = new Item();
+									 obj.keyword = i;
+									 obj.title = t;
+									 obj.setCount(1);
+									 item.add(obj);
+									 keyword.add(i);
+								 }
+								 else{
+									 for(int a=0; a<item.size(); a++){
+										 Item object = item.get(a);
+										 if(object.getKeyword().contains(i)){
+											 item.remove(a);
+											 //									System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+											 object.setCount(object.getCount()+1);
+											 item.add(object);
+										 }
+									 }
+								 }
 
-							if (item.contains(i) == false) // check for duplicate
-							{
-								Item obj = new Item();
-								obj.keyword = i;
-								obj.title = t;
-								obj.setCount(1);
-								item.add(obj);
-							}
+//							if (item.contains(i) == false) // check for duplicate
+//							{
+//								Item obj = new Item();
+//								obj.keyword = i;
+//								obj.title = t;
+//								obj.setCount(1);
+//								item.add(obj);
+//							}
+
+
+
+
 //							else{
 ////								for(int j=0; j<item.size(); j++){
 ////									Item item1 = item.get(j);
@@ -244,7 +258,7 @@ public class Crawler2 {
 //								System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 //								System.out.println("duplicate word = "+ i);
 //							}
-							// }
+							 }
 						}
 					}
 				}
@@ -259,39 +273,38 @@ public class Crawler2 {
 															// this URL
 
 		for(int i = 0; i<item.size(); i++){
-			Item obj = new Item();
-			obj = item.get(i);
+			Item obj = item.get(i);
 			createFile(obj.getKeyword(), url, obj.getTitle(), obj.getCount());
 			System.out.println(" keyword = " + i + " url = " + url);
 		}
 	}
 
-	// public void CreateStopList(ArrayList<String> stopList)
-	// {
-	// stopList.add("and");
-	// stopList.add("the");
-	// stopList.add("for");
-	// stopList.add("did");
-	// stopList.add("does");
-	// stopList.add("are");
-	// stopList.add("was");
-	// stopList.add("were");
-	// stopList.add("has");
-	// stopList.add("have");
-	// stopList.add("had");
-	// stopList.add("that");
-	// stopList.add("this");
-	// stopList.add("these");
-	// stopList.add("which");
-	// stopList.add("whose");
-	// stopList.add("who");
-	// stopList.add("whom");
-	// stopList.add("what");
-	// stopList.add("why");
-	// stopList.add("she");
-	// stopList.add("they");
-	// stopList.add("them");
-	// }
+	 public void CreateStopList(ArrayList<String> stopList)
+	 {
+	 stopList.add("and");
+	 stopList.add("the");
+	 stopList.add("for");
+	 stopList.add("did");
+	 stopList.add("does");
+	 stopList.add("are");
+	 stopList.add("was");
+	 stopList.add("were");
+	 stopList.add("has");
+	 stopList.add("have");
+	 stopList.add("had");
+	 stopList.add("that");
+	 stopList.add("this");
+	 stopList.add("these");
+	 stopList.add("which");
+	 stopList.add("whose");
+	 stopList.add("who");
+	 stopList.add("whom");
+	 stopList.add("what");
+	 stopList.add("why");
+	 stopList.add("she");
+	 stopList.add("they");
+	 stopList.add("them");
+	 }
 
 	private void getUrl(String url) {
 
