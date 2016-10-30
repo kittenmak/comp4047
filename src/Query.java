@@ -37,7 +37,7 @@ public class Query {
 					
 					temp.setKeyword(part[0]);
 					temp.setUrl(part[1]);
-					
+					temp.setCount(Integer.parseInt(part[2]));
 					result.add(temp);
 					
 				}

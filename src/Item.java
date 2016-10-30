@@ -6,7 +6,7 @@ public class Item {
 	String url;
 	String desc;
 	Boolean sponsor;
-	int count;
+	int count = 0;
 	String title;
 	
 	public String getKeyword() {

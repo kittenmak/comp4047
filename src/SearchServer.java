@@ -95,7 +95,7 @@ public class SearchServer {
 	
 	
 	public static void main(String[] args) {
-//		String tmp = 
+
 		SearchServer ss = new SearchServer(args[0]);
 		
 		
