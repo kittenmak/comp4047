@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
  */
 public class Crawler2 {
 
-	int x = 10, y = 20;
+	int x = 10, y = 100;
 	String mPath = "C:\\";
 	// "/Users/michaelleung/Documents/BU/Degree/Year4/group_9/src/";
 	String mFolderName = "db";
@@ -37,6 +37,7 @@ public class Crawler2 {
 															// database
 		{
 			if (mUrlPool.size() > 0) {
+				System.out.println("mUrlPool.get(0) = " + mUrlPool.get(0) + " mUrlPool.size() = " + mUrlPool.size() );
 				crawling(mUrlPool.get(0));
 				mProcessedURLPool.add(mUrlPool.get(0));
 				mUrlPool.remove(0);
@@ -49,9 +50,10 @@ public class Crawler2 {
 		// "C:\\");
 		// File page = get_page();
 		// break_page(page);
-
-		getKeyword(url);
-		getUrl(url);
+		if(!url.contains("facebook") && !url.contains("icloud") && !url.contains("apple") && !url.contains("google.com/intl/") && !url.contains("google.com.hk/intl/") && !url.contains("mail.google") && !url.contains("drive.google")) {
+			getKeyword(url);
+			getUrl(url);
+		}
 	}
 
 	// private void break_page(File webpage) {
@@ -331,7 +333,7 @@ public class Crawler2 {
 					matchHrefTag = atternHrefTag.matcher(hrefText);
 					while (matchHrefTag.find()) {
 						String link = matchHrefTag.group(1);
-						if (link.startsWith("http://")) {
+						if (link.startsWith("http://") || link.startsWith("https://")) {
 							if (mUrlPool.size() < x && mUrlPool.contains(link) == false
 									&& mProcessedURLPool.contains(link) == false) {
 								mUrlPool.add(link);
