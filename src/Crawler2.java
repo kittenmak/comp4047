@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
  */
 public class Crawler2 {
 
-	int x = 10, y = 60;
+	int x = 10, y = 20;
 	String mPath = "C:\\";
 	// "/Users/michaelleung/Documents/BU/Degree/Year4/group_9/src/";
 	String mFolderName = "db";
@@ -216,9 +216,18 @@ public class Crawler2 {
 							// if (stopList.contains(i.toLowerCase()) == false)
 							// // check if word in stop list
 							// {
+							for(int a=0; a<item.size(); a++){
+								Item object = item.get(a);
+								if(object.getKeyword().contains(i)){
+									item.remove(a);
+//									System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+									object.setCount(object.getCount()+1);
+									item.add(object);
+								}
+							}
+
 							if (item.contains(i) == false) // check for duplicate
 							{
-								System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 								Item obj = new Item();
 								obj.keyword = i;
 								obj.title = t;
@@ -232,6 +241,7 @@ public class Crawler2 {
 ////										item1.setCount(item1.getCount() + 1);
 ////									}
 ////								}
+//								System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 //								System.out.println("duplicate word = "+ i);
 //							}
 							// }
