@@ -1,5 +1,3 @@
-// package se;
-
 import java.util.Arrays;
 
 /**
@@ -19,6 +17,7 @@ public class SearchServer {
         System.out.print("DIV.yahoo A:active {BORDER-RIGHT: #000099 1px solid; BORDER-TOP: #000099 1px solid; BORDER-LEFT: #000099 1px solid; COLOR: #f00; BORDER-BOTTOM: #000099 1px solid}");
         System.out.print("DIV.yahoo SPAN.current {BORDER-RIGHT: #fff 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #fff 1px solid; PADDING-LEFT: 5px; FONT-WEIGHT: bold; PADDING-BOTTOM: 2px; MARGIN: 2px; BORDER-LEFT: #fff 1px solid; COLOR: #000; PADDING-TOP: 2px; BORDER-BOTTOM: #fff 1px solid; BACKGROUND-COLOR: #fff}");
         System.out.print("DIV.yahoo SPAN.disabled {BORDER-RIGHT: #eee 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #eee 1px solid; PADDING-LEFT: 5px; PADDING-BOTTOM: 2px; MARGIN: 2px; BORDER-LEFT: #eee 1px solid; COLOR: #ddd; PADDING-TOP: 2px; BORDER-BOTTOM: #eee 1px solid}");
+        System.out.print("</style>");
         for(int i = 0;i < 10;i++){
         System.out.print("<div>");
         System.out.print("<table style=\"width:100%\">\n");
@@ -37,7 +36,7 @@ public class SearchServer {
         System.out.print("<a href=\"#?page=6\">6</a>");
         System.out.print("<a href=\"#?page=7\">7</a>");
         System.out.print("<a href=\"#?page=2\"> > </a></div>");
-        }
+        
         System.out.print("Received query: " + Arrays.toString(args));
     }
 }
