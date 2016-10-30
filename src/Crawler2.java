@@ -127,14 +127,17 @@ public class Crawler2 {
 				
 				if(line.contains("<title>")){
 					
-					line = line.replaceAll("<title>", "");
-					line = line.replaceAll("</title>", "");
-					while(line.charAt(0)==' '){
-						line=line.substring(1, line.length());
-					}
-					while(line.charAt(0)=='	'){
-						line=line.substring(1, line.length());
-					}
+//					line = line.replaceAll("<title>", "");
+//					line = line.replaceAll("</title>", "");
+					int starttitlepos = line.indexOf("<title>");
+					int endtitlepos = line.indexOf("</title>");
+					line = line.substring(starttitlepos+7, endtitlepos);
+//					while(line.charAt(0)==' '){
+//						line=line.substring(1, line.length());
+//					}
+//					while(line.charAt(0)=='	'){
+//						line=line.substring(1, line.length());
+//					}
 					t = line;
 					
 				}
@@ -433,7 +436,7 @@ public class Crawler2 {
 				while ((line = bf.readLine()) != null) {
 
 					linecount++;
-					int indexfound = line.indexOf(title + "," + url + "," + count);
+					int indexfound = line.indexOf(count + "," + title + "," + url);
 					if (indexfound > -1) {
 						System.out.println("keyword exist on line " + linecount);
 						found = true;
@@ -450,7 +453,7 @@ public class Crawler2 {
 		if (!found) {
 			try {
 				BufferedWriter bw = new BufferedWriter(new FileWriter(path + keyword + ".txt", true));
-				bw.write("\r\n" + title + "," + url +  "," + count);
+				bw.write("\r\n" + count + "," + title + "," + url);
 				bw.close(); // You need to close it here only.
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
