@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
  */
 public class Crawler2 {
 
-    int x = 10, y = 20;
+    int x = 10, y = 60;
     String mPath = "C:\\";
             //"/Users/michaelleung/Documents/BU/Degree/Year4/group_9/src/";
     String mFolderName = "db";
@@ -318,18 +318,67 @@ public class Crawler2 {
     public void createFile(String keyword, String url){
         char c = keyword.charAt(0);
         String path = mFullPath + "/" + c + "/";
+        String line;
+        int linecount = 0;
+        File file = new File(path + keyword + ".txt");
+//        try{
+//        	BufferedWriter output = null;
+//            File file = new File(path + keyword + ".txt");
+//            if(file.exists() && !file.isDirectory()) {
+//                output = new BufferedWriter(new FileWriter(file));
+//                output.newLine();
+//                output.write(keyword + "," + url);
+//                output.close();
+//            }
+//            else{
+//                output = new BufferedWriter(new FileWriter(file));
+//                output.write(keyword + "," + url);
+//                output.close();
+//                System.out.println("File has been written");	
+//            }
+//        }catch(Exception e){
+//            System.out.println("Could not create file");
+//        }
+        
+        boolean found = false;
+        if(file.exists() && !file.isDirectory()) {
+            BufferedReader bf = null;
+    		try {
+    			bf = new BufferedReader (new FileReader(path + keyword + ".txt"));
+    		} catch (FileNotFoundException e2) {
+    			// TODO Auto-generated catch block
+    			e2.printStackTrace();
+    		}
+            try {
+    			while (( line = bf.readLine()) != null) {
 
-        try{
-            Writer output = null;
-            File file = new File(path + keyword + ".txt");
-            output = new BufferedWriter(new FileWriter(file));
-            output.write(keyword + "," + url);
-            output.close();
-            System.out.println("File has been written");
-
-        }catch(Exception e){
-            System.out.println("Could not create file");
+    			    linecount++;
+    			    int indexfound = line.indexOf(keyword + "," + url);
+    			    if (indexfound > -1) {
+    			        System.out.println("keyword exist on line " + linecount);
+    			        found = true;
+    			        break;
+    			    }
+    			}
+    	        bf.close(); 
+    		} catch (IOException e1) {
+    			// TODO Auto-generated catch block
+    			e1.printStackTrace();
+    		}
         }
+//        else{
+        if (!found) {
+            try {
+            	BufferedWriter bw = new BufferedWriter(new FileWriter(path + keyword + ".txt", true));
+				bw.write("\r\n" + keyword + "," + url);
+	            bw.close();  // You need to close it here only. 
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+            System.out.println(keyword+ "added"); 
+        }
+//        }
     }
 
 //    private File get_page() throws IOException {
