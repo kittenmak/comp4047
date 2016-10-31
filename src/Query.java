@@ -35,9 +35,14 @@ public class Query {
 					
 					String [] part = line.split(",");
 					
-					temp.setKeyword(part[0]);
-					temp.setUrl(part[1]);
-					temp.setCount(Integer.parseInt(part[2]));
+					temp.setTitle(part[1]);
+					temp.setUrl(part[2]);
+					temp.setCount(Integer.parseInt(part[0]));
+					if(part[3].equals("F")){
+						temp.setSponsor(false);
+					}else{
+						temp.setSponsor(true);
+					}
 					result.add(temp);
 					
 				}

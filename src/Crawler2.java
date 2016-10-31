@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import comp4047.deleteDB;
+
 /**
  *
  */
@@ -15,7 +17,7 @@ import java.util.regex.Pattern;
  */
 public class Crawler2 {
 
-	int x = 10, y = 100;
+	int x = 10, y = 20;
 	String mPath = "C:\\";
 	// "/Users/michaelleung/Documents/BU/Degree/Year4/group_9/src/";
 	String mFolderName = "db";
@@ -28,6 +30,9 @@ public class Crawler2 {
 
 	public Crawler2() {
 
+		
+		
+		
 		mUrlPool.add(mUrl); // the first time
 		createFolder();
 
@@ -386,6 +391,14 @@ public class Crawler2 {
 				mkDirs(mFileDir, alphabet, depth);
 			}
 		}
+		else{
+			//String[]entries = index.list();
+			//for(String s: entries){
+			    //File currentFile = new File(mFileDir);
+				System.out.println(mFileDir);
+			    mFileDir.delete();
+			//}
+		}
 	}
 
 	public void mkDirs(File root, List<String> dirs, int depth) {
@@ -436,7 +449,7 @@ public class Crawler2 {
 				while ((line = bf.readLine()) != null) {
 
 					linecount++;
-					int indexfound = line.indexOf(count + "," + title + "," + url);
+					int indexfound = line.indexOf(count + "," + title + "," + url + ",F");
 					if (indexfound > -1) {
 						System.out.println("keyword exist on line " + linecount);
 						found = true;
@@ -453,7 +466,7 @@ public class Crawler2 {
 		if (!found) {
 			try {
 				BufferedWriter bw = new BufferedWriter(new FileWriter(path + keyword + ".txt", true));
-				bw.write("\r\n" + count + "," + title + "," + url);
+				bw.write("\r\n" + count + "," + title + "," + url + ",F");
 				bw.close(); // You need to close it here only.
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
@@ -498,10 +511,14 @@ public class Crawler2 {
 	// }
 
 	public static void main(String[] args) {
+		deleteDB ddb = new deleteDB();
 		Crawler2 crawler2 = new Crawler2();
 		System.out.println("crawler2.urlPool count = " + crawler2.mUrlPool.size() + " crawler2.urlPool = "
 				+ crawler2.mUrlPool + "mProcessedURLPool count = " + crawler2.mProcessedURLPool.size()
 				+ " \n mProcessedURLPool = " + crawler2.mProcessedURLPool);
 
+		sorting sort = new sorting();
+		
+		
 	}
 }
