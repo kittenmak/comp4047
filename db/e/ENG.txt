@@ -1,0 +1,5 @@
+1,Alumni Affairs Office - Hong Kong Baptist University,http://aao.hkbu.edu.hk/en/home/index.php,F
+1,Events - Eyes On HKBU,http://eyesonhkbu.hkbu.edu.hk/index.php/en-GB/eventsss,T
+1,Privacy Policy ï¿½V HKBU,http://www.hkbu.edu.hk/eng/about/privacy.jsp,F
+1,Events - Eyes On HKBU,http://eyesonhkbu.hkbu.edu.hk/index.php/en-GB/eventsss,T1,Alumni Affairs Office - Hong Kong Baptist University,http://aao.hkbu.edu.hk/en/home/index.php,F1,Privacy Policy ï¿½ï¿½V HKBU,http://www.hkbu.edu.hk/eng/about/privacy.jsp,T
+1,Events - Eyes On HKBU,http://eyesonhkbu.hkbu.edu.hk/index.php/en-GB/eventsss,T1,Events - Eyes On HKBU,http://eyesonhkbu.hkbu.edu.hk/index.php/en-GB/eventsss,T1,Alumni Affairs Office - Hong Kong Baptist University,http://aao.hkbu.edu.hk/en/home/index.php,F1,Privacy Policy þýþýV HKBU,http://www.hkbu.edu.hk/eng/about/privacy.jsp,T1,Alumni Affairs Office - Hong Kong Baptist University,http://aao.hkbu.edu.hk/en/home/index.php,F1,Privacy Policy þýV HKBU,http://www.hkbu.edu.hk/eng/about/privacy.jsp,F

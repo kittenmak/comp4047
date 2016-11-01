@@ -19,7 +19,7 @@ public class deleteDB {
 			char c = (char) i;
 			String path = "C:\\db\\";
 			String fullpath = path + c;
-			System.out.println(fullpath);
+//			System.out.println(fullpath);
 			File folder = new File(fullpath);
 			File[] listOfFiles = folder.listFiles();
 			ArrayList<String> fileList = new ArrayList<String>();

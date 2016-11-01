@@ -1,0 +1,4 @@
+1,SSOid Sign In,https://buniport.hkbu.edu.hk/,F
+1,SSOid Sign In,https://iss.hkbu.edu.hk/buam/signForm.seam?true=true&request_srvc_id=buniport,F
+1,SSOid Sign In,https://buniport.hkbu.edu.hk/,F1,SSOid Sign In,https://iss.hkbu.edu.hk/buam/signForm.seam?true=true&request_srvc_id=buniport,F
+1,SSOid Sign In,https://buniport.hkbu.edu.hk/,F1,SSOid Sign In,https://iss.hkbu.edu.hk/buam/signForm.seam?true=true&request_srvc_id=buniport,F1,SSOid Sign In,https://buniport.hkbu.edu.hk/,F1,SSOid Sign In,https://iss.hkbu.edu.hk/buam/signForm.seam?true=true&request_srvc_id=buniport,F

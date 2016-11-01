@@ -1,0 +1,4 @@
+1,Alumni Affairs Office - Hong Kong Baptist University,http://aao.hkbu.edu.hk/en/home/index.php,F
+1, University Advancement Office - Hong Kong Baptist University ,http://uao.hkbu.edu.hk/eng/index.php,F
+1,Alumni Affairs Office - Hong Kong Baptist University,http://aao.hkbu.edu.hk/en/home/index.php,F1, University Advancement Office - Hong Kong Baptist University ,http://uao.hkbu.edu.hk/eng/index.php,F
+1,Alumni Affairs Office - Hong Kong Baptist University,http://aao.hkbu.edu.hk/en/home/index.php,F1, University Advancement Office - Hong Kong Baptist University ,http://uao.hkbu.edu.hk/eng/index.php,F1,Alumni Affairs Office - Hong Kong Baptist University,http://aao.hkbu.edu.hk/en/home/index.php,F1, University Advancement Office - Hong Kong Baptist University ,http://uao.hkbu.edu.hk/eng/index.php,F

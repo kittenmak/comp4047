@@ -1,0 +1,4 @@
+7, University Advancement Office - Hong Kong Baptist University ,http://uao.hkbu.edu.hk/eng/index.php,F
+3,Home - Eyes On HKBU,http://eyesonhkbu.hkbu.edu.hk/,T
+3,Home - Eyes On HKBU,http://eyesonhkbu.hkbu.edu.hk/,T7, University Advancement Office - Hong Kong Baptist University ,http://uao.hkbu.edu.hk/eng/index.php,T
+3,Home - Eyes On HKBU,http://eyesonhkbu.hkbu.edu.hk/,T3,Home - Eyes On HKBU,http://eyesonhkbu.hkbu.edu.hk/,T7, University Advancement Office - Hong Kong Baptist University ,http://uao.hkbu.edu.hk/eng/index.php,T7, University Advancement Office - Hong Kong Baptist University ,http://uao.hkbu.edu.hk/eng/index.php,F

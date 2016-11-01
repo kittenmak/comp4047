@@ -1,0 +1,8 @@
+1,Alumni Affairs Office - Hong Kong Baptist University,http://aao.hkbu.edu.hk/en/home/index.php,F
+3, University Advancement Office - Hong Kong Baptist University ,http://uao.hkbu.edu.hk/eng/index.php,F
+1,Home - Eyes On HKBU,http://eyesonhkbu.hkbu.edu.hk/,T
+3,,https://plus.google.com/+youtube,F
+4,Privacy Policy ï¿½V Privacy &amp; Terms ï¿½V Google,https://www.google.com/policies/privacy/,F
+1,Home - Eyes On HKBU,http://eyesonhkbu.hkbu.edu.hk/,T4,Privacy Policy ï¿½ï¿½V Privacy &amp; Terms ï¿½ï¿½V Google,https://www.google.com/policies/privacy/,F3, University Advancement Office - Hong Kong Baptist University ,http://uao.hkbu.edu.hk/eng/index.php,F3,,https://plus.google.com/+youtube,F1,Alumni Affairs Office - Hong Kong Baptist University,http://aao.hkbu.edu.hk/en/home/index.php,T
+4,Privacy Policy ï¿½V Privacy &amp; Terms ï¿½V Google,https://www.google.com/policies/privacy/,F
+1,Home - Eyes On HKBU,http://eyesonhkbu.hkbu.edu.hk/,T1,Home - Eyes On HKBU,http://eyesonhkbu.hkbu.edu.hk/,T4,Privacy Policy þýþýV Privacy &amp; Terms þýþýV Google,https://www.google.com/policies/privacy/,F3, University Advancement Office - Hong Kong Baptist University ,http://uao.hkbu.edu.hk/eng/index.php,F3,,https://plus.google.com/+youtube,F1,Alumni Affairs Office - Hong Kong Baptist University,http://aao.hkbu.edu.hk/en/home/index.php,T4,Privacy Policy þýV Privacy &amp; Terms þýV Google,https://www.google.com/policies/privacy/,F4,Privacy Policy þýV Privacy &amp; Terms þýV Google,https://www.google.com/policies/privacy/,F3, University Advancement Office - Hong Kong Baptist University ,http://uao.hkbu.edu.hk/eng/index.php,F3,,https://plus.google.com/+youtube,F1,Alumni Affairs Office - Hong Kong Baptist University,http://aao.hkbu.edu.hk/en/home/index.php,F

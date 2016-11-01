@@ -1,9 +1,14 @@
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 import java.util.Collections;
@@ -30,13 +35,15 @@ public class sorting {
 
 		ArrayList<String> sponsors = new ArrayList<String>();
 		try {
-			BufferedReader br = new BufferedReader(new FileReader("sponsor.txt"));
+
+			BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("sponsor.txt"), "UTF8"));
+
 			String line;
+			
 
 			while ((line = br.readLine()) != null) {
 				// printing out each line in the file
 				if (line.length() > 0) {
-
 					sponsors.add(line);
 				}
 
@@ -65,7 +72,8 @@ public class sorting {
 
 				String ppath = fullpath + "\\" + fileList.get(0);
 				try {
-					BufferedReader br = new BufferedReader(new FileReader(ppath));
+					BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(ppath), "UTF8"));
+					
 					System.out.println("processing File: " + ppath);
 					ArrayList<String> allLines = new ArrayList<String>();
 					try {
@@ -79,14 +87,17 @@ public class sorting {
 										int tmp = line.lastIndexOf(",");
 										line = line.substring(0, tmp + 1);
 										line = line.concat("T");
+
 									}
 								}
+
 								allLines.add(line);
 							}
 						}
 
 						PrintWriter writer = new PrintWriter(ppath, "UTF-8");
 						while (!allLines.isEmpty()) {
+							
 							writer.println(allLines.get(0));
 							allLines.remove(0);
 						}
@@ -96,7 +107,7 @@ public class sorting {
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
-				} catch (FileNotFoundException e) {
+				} catch (FileNotFoundException | UnsupportedEncodingException e) {
 					System.out.println(e);
 					e.printStackTrace();
 				}
@@ -129,7 +140,8 @@ public class sorting {
 
 				String ppath = fullpath + "\\" + fileList.get(0);
 				try {
-					BufferedReader br = new BufferedReader(new FileReader(ppath));
+					
+					BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(ppath), "UTF8"));
 					System.out.println("processing File: " + ppath);
 					try {
 						String line;
@@ -190,30 +202,35 @@ public class sorting {
 
 						}
 
+						BufferedWriter bw = new BufferedWriter(new FileWriter(ppath, true));
 
-						PrintWriter writer = new PrintWriter(ppath, "UTF-8");
+						// PrintWriter writer = new PrintWriter(ppath, "BIG-5");
+						// PrintWriter writer = new PrintWriter(ppath);
 						while (!trows.isEmpty()) {
-							writer.println(trows.get(0));
+							bw.write(trows.get(0));
+							// writer.println(trows.get(0));
 							trows.remove(0);
 						}
 						while (!frows.isEmpty()) {
-							writer.println(frows.get(0));
+							bw.write(frows.get(0));
 							frows.remove(0);
 						}
 
-						writer.close();
-
+						// writer.close();
+						bw.close(); // You need to close it here only.
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
 				} catch (FileNotFoundException e) {
 					System.out.println(e);
 					e.printStackTrace();
+				} catch (UnsupportedEncodingException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
 				}
 
 				fileList.remove(0);
 			}
-
 
 		}
 

@@ -1,0 +1,5 @@
+1,Alumni Affairs Office - Hong Kong Baptist University,http://aao.hkbu.edu.hk/en/home/index.php,F
+50,Privacy Policy ï¿½V Privacy &amp; Terms ï¿½V Google,https://www.google.com/policies/privacy/,F
+50,Privacy Policy ï¿½ï¿½V Privacy &amp; Terms ï¿½ï¿½V Google,https://www.google.com/policies/privacy/,F1,Alumni Affairs Office - Hong Kong Baptist University,http://aao.hkbu.edu.hk/en/home/index.php,F
+50,Privacy Policy ï¿½V Privacy &amp; Terms ï¿½V Google,https://www.google.com/policies/privacy/,F
+50,Privacy Policy þýV Privacy &amp; Terms þýV Google,https://www.google.com/policies/privacy/,F50,Privacy Policy þýþýV Privacy &amp; Terms þýþýV Google,https://www.google.com/policies/privacy/,F1,Alumni Affairs Office - Hong Kong Baptist University,http://aao.hkbu.edu.hk/en/home/index.php,F50,Privacy Policy þýV Privacy &amp; Terms þýV Google,https://www.google.com/policies/privacy/,F1,Alumni Affairs Office - Hong Kong Baptist University,http://aao.hkbu.edu.hk/en/home/index.php,F

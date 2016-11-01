@@ -6,11 +6,8 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
-
 /**
- * @author Group9 - Kitten & Michael & Tom
- * Crawling Algorithm
+ * @author Group9 - Kitten & Michael & Tom Crawling Algorithm
  */
 public class Crawler {
 
@@ -31,11 +28,13 @@ public class Crawler {
 		// loop for extracting URL and keywords to database
 		for (int i = 0; mProcessedURLPool.size() < y; i++) {
 			if (mUrlPool.size() > 0) {
-				System.out.println("mUrlPool.get(0) = " + mUrlPool.get(0) + " mUrlPool.size() = " + mUrlPool.size());
+				// System.out.println("mUrlPool.get(0) = " + mUrlPool.get(0) + "
+				// mUrlPool.size() = " + mUrlPool.size());
 				crawling(mUrlPool.get(0));
 				mProcessedURLPool.add(mUrlPool.get(0));
 				mUrlPool.remove(0);
-				System.out.println("Iteration " + mProcessedURLPool.size() + ": " + mProcessedURLPool.get(i));
+				// System.out.println("Iteration " + mProcessedURLPool.size() +
+				// ": " + mProcessedURLPool.get(i));
 			}
 		}
 	}
@@ -72,9 +71,10 @@ public class Crawler {
 			// create URL connection
 			HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
 			InputStream is = conn.getInputStream();
-			BufferedReader br = new BufferedReader(new InputStreamReader(is, "utf-8"));
+			BufferedReader br = new BufferedReader(new InputStreamReader(is, "UTF-8"));
 			// reading URL
 			String line = br.readLine();
+
 			while (line != null) {
 
 				if (line.contains("<title>")) {
@@ -190,14 +190,13 @@ public class Crawler {
 			System.out.println("Error - Cannot access URL " + url);
 		}
 
-		System.out.println("Keyword: " + item.size()); // print out total
-														// keyword number in
-														// this URL
+		// System.out.println("Keyword: " + item.size()); 
+		// print out total keyword number in this URL
 
 		for (int i = 0; i < item.size(); i++) {
 			Item obj = item.get(i);
 			createFile(obj.getKeyword(), url, obj.getTitle(), obj.getCount());
-			System.out.println(" keyword = " + i + " url = " + url);
+//			System.out.println(" keyword = " + i + " url = " + url);
 		}
 	}
 
@@ -271,7 +270,7 @@ public class Crawler {
 	private void createFolder() {
 		// if the directory does not exist, create it
 		if (!mFileDir.exists()) {
-			System.out.println("creating directory: " + mFullPath);
+//			System.out.println("creating directory: " + mFullPath);
 			boolean result = false;
 			try {
 				result = mFileDir.mkdir();
@@ -317,6 +316,7 @@ public class Crawler {
 			BufferedReader bf = null;
 			try {
 				bf = new BufferedReader(new FileReader(path + keyword + ".txt"));
+				System.out.println("Printing at: " + path + keyword +".txt for " + url);
 			} catch (FileNotFoundException e2) {
 				e2.printStackTrace();
 			}
@@ -326,7 +326,7 @@ public class Crawler {
 					linecount++;
 					int indexfound = line.indexOf(count + "," + title + "," + url + ",F");
 					if (indexfound > -1) {
-						System.out.println("keyword exist on line " + linecount);
+//						System.out.println("keyword exist on line " + linecount);
 						found = true;
 						break;
 					}
@@ -345,18 +345,22 @@ public class Crawler {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			System.out.println(keyword + "added");
+//			System.out.println(keyword + "added");
 		}
 	}
 
 	public static void main(String[] args) {
 		deleteDB ddb = new deleteDB();
+		System.out.println("Finished DB Clearance");
 		Crawler crawler2 = new Crawler();
-		System.out.println("crawler2.urlPool count = " + crawler2.mUrlPool.size() + " crawler2.urlPool = "
-				+ crawler2.mUrlPool + "mProcessedURLPool count = " + crawler2.mProcessedURLPool.size()
-				+ " \n mProcessedURLPool = " + crawler2.mProcessedURLPool);
-
+		// System.out.println("crawler2.urlPool count = " +
+		// crawler2.mUrlPool.size() + " crawler2.urlPool = "
+		// + crawler2.mUrlPool + "mProcessedURLPool count = " +
+		// crawler2.mProcessedURLPool.size()
+		// + " \n mProcessedURLPool = " + crawler2.mProcessedURLPool);
+		System.out.println("Finished Crawling");
 		sorting sort = new sorting();
+		System.out.println("Finished Sorting");
 
 	}
 }

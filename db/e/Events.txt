@@ -1,0 +1,6 @@
+3, University Advancement Office - Hong Kong Baptist University ,http://uao.hkbu.edu.hk/eng/index.php,F
+7,Events - Eyes On HKBU,http://eyesonhkbu.hkbu.edu.hk/index.php/en-GB/eventsss,T
+3,,https://www.youtube.com/channel/UC_1bnT3_ELtqWMnTHh82Ljw,F
+3,,https://www.youtube.com/user/hongkongbaptistu,F
+7,Events - Eyes On HKBU,http://eyesonhkbu.hkbu.edu.hk/index.php/en-GB/eventsss,T3, University Advancement Office - Hong Kong Baptist University ,http://uao.hkbu.edu.hk/eng/index.php,F3,,https://www.youtube.com/channel/UC_1bnT3_ELtqWMnTHh82Ljw,F3,,https://www.youtube.com/user/hongkongbaptistu,T
+7,Events - Eyes On HKBU,http://eyesonhkbu.hkbu.edu.hk/index.php/en-GB/eventsss,T7,Events - Eyes On HKBU,http://eyesonhkbu.hkbu.edu.hk/index.php/en-GB/eventsss,T3, University Advancement Office - Hong Kong Baptist University ,http://uao.hkbu.edu.hk/eng/index.php,F3,,https://www.youtube.com/channel/UC_1bnT3_ELtqWMnTHh82Ljw,F3,,https://www.youtube.com/user/hongkongbaptistu,T3, University Advancement Office - Hong Kong Baptist University ,http://uao.hkbu.edu.hk/eng/index.php,F3,,https://www.youtube.com/channel/UC_1bnT3_ELtqWMnTHh82Ljw,F3,,https://www.youtube.com/user/hongkongbaptistu,F
