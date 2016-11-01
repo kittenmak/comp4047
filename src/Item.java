@@ -4,7 +4,6 @@ public class Item {
 	
 	String keyword;
 	String url;
-	String desc;
 	Boolean sponsor;
 	int count = 0;
 	String title;
@@ -20,12 +19,6 @@ public class Item {
 	}
 	public void setUrl(String url) {
 		this.url = url;
-	}
-	public String getDesc() {
-		return desc;
-	}
-	public void setDesc(String desc) {
-		this.desc = desc;
 	}
 	public Boolean getSponsor() {
 		return sponsor;

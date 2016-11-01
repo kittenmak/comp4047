@@ -37,7 +37,7 @@ public class Query {
 					
 					temp.setTitle(part[1]);
 					temp.setUrl(part[2]);
-					temp.setCount(Integer.parseInt(part[0]));
+					//temp.setCount(Integer.parseInt(part[0]));
 					if(part[3].equals("F")){
 						temp.setSponsor(false);
 					}else{
@@ -60,7 +60,7 @@ public class Query {
 	}
 
 	public static void main(String[] args) {
-		Query q1 = new Query("HKBU");
+		Query q1 = new Query(args[0]);
 		
 		System.out.println(q1.result);
 	}
