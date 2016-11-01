@@ -52,9 +52,6 @@ public class SearchServer {
 			System.out.print("<div>");
 			System.out.print("<table style=\"width:100%\">\n");
 
-			
-			
-			//coding start
 
 			Item item = new Item();
 			item = data.get(i);
@@ -63,15 +60,6 @@ public class SearchServer {
 			url = item.getUrl();
 			sponsor = item.getSponsor();
 
-			// Collections.sort(item, new Comparator<Item>() {
-   //      	@Override
-   //      	public int compare(Item item1, Item item2)
-   //      	{
-
-   //          	return  item1.getSponsor().compareTo(item2.getSponsor);
-   //      	}
-   //  		});
-			//coding end
 			
 			
 			System.out.print("<tr><td><a href=\"" + url + "\">" + title +"</a></td></tr>");
